@@ -66,7 +66,15 @@ const App = () => {
     </div>
   )
 }
+export default function App() {
+  return (
+    <div style={{ padding: "2rem", fontFamily: "Arial, sans-serif" }}>
+      <h1>🦷 Dental AI Copilot</h1>
+      <p style={{ color: "green" }}>✅ React is mounted</p>
 
-export default App
-// trigger rebuild
+      {/* Your existing chatbot code here */}
+    </div>
+  );
+}
+
 
