@@ -42,11 +42,15 @@ const App = () => {
     <div style={{ maxWidth: 600, margin: '2rem auto', fontFamily: 'Arial, sans-serif' }}>
       <h2>🦷 Dental AI Copilot</h2>
       <div style={{ border: '1px solid #ccc', padding: '1rem', minHeight: 300 }}>
-        {messages.map((msg, i) => (
-          <div key={i} style={{ marginBottom: '1rem' }}>
-            <strong>{msg.role === 'user' ? 'You' : 'Copilot'}:</strong> {msg.content}
-          </div>
-        ))}
+        {messages.length > 0 ? (
+  messages.map((msg, i) => (
+    <div key={i} style={{ marginBottom: '1rem' }}>
+      <strong>{msg.role === 'user' ? 'You' : 'Copilot'}:</strong> {msg.content}
+    </div>
+  ))
+) : (
+  <div>No messages yet — React is working ✅</div>
+)}
         {loading && <div>Copilot is thinking...</div>}
       </div>
       <input
